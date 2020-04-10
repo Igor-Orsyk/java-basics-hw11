@@ -1,25 +1,20 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.function.BiFunction;
 import java.util.function.Function;
+import java.util.stream.Stream;
 
 public class Lambda {
 
-    /**
-     * Function to get max value.
-     *
-     * @return lambda expression.
-     */
     public static BiFunction<Double, Double, Double> getMax() {
-        // TODO replace null with lambda expression
-        return null;
+        return (a, b) -> Stream.of(a, b)
+                .max(Comparator.comparing(Double::doubleValue))
+                .get();
     }
 
-    /**
-     * Function to get square root.
-     *
-     * @return lambda expression.
-     */
     public static Function<Double, Double> getSqrt() {
-        // TODO replace null with method reference
-        return null;
+        return (a) -> Math.sqrt(a);
     }
 }
