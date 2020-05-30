@@ -15,6 +15,6 @@ public class Lambda {
     }
 
     public static Function<Double, Double> getSqrt() {
-        return (a) -> Math.sqrt(a);
+        return Math :: sqrt;
     }
 }
